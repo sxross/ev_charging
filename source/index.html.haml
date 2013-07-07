@@ -1,0 +1,29 @@
+---
+title: Charging Calculator
+---
+.row
+  .span12
+    This weblet attempts to calculate charging time for a given location, given the voltage and amperage. It's intended for the Tesla Model S, but the math works the same for all EVs. Ohm's law and all that.
+    Naturally, your mileage and charging time may vary depending on driving habits, the quality of the charging line and whether you have twin chargers (in some cases).
+.row
+
+.form-horizontal
+  .control-group
+    %label.control-label{:for => "voltage"} Voltage
+    .controls
+      %input#voltage{:type => 'number'}
+  .control-group
+    %label.control-label{:for => "amperage"} Amperage
+    .controls
+      %input#amperage{:type => 'number'}
+  .control-group
+    %label.control-label{:for => "amount-to-charge"} Watt Hours to Charge
+    .controls
+      %input#amount-to-charge{:type => 'number'}
+  .control-group
+    %label.control-label{:for => "watts-per-mile"} Usual Watts/Mile
+    %input#watts-per-mile{:type => 'range', :name => 'watts-per-mile', :min => 150, :max => 500}
+    #watts-per-mile-text 340
+  .control-group
+    %button#calculate calculate
+#result
